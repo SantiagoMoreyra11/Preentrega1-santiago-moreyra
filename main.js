@@ -5,24 +5,28 @@
 //refleje como alerta si "Es un mail válido" o
 //"Es un mail inválido", en el caso de que no contenga "@".
 
+//ejercicios 1 Moreyra Santiago
+
 const email = prompt("ingrese su mail");
 const emailRegistrado = "Santigamer240@gmail.com";
-
+ContieneArroba = false;
 console.log(email);
 
 for (let i = 0; i < email.length; i++) {
-  if (email === emailRegistrado) {
+  if (email[i] === "@") {
+    ContieneArroba = true;
+    break;
+  }
+}
+if (ContieneArroba) {
+  if (ContieneArroba == true && emailRegistrado === email) {
     console.log("Sesion iniciada correctamente");
     alert("Sesion iniciada correctamente");
-    break;
+  } else if (ContieneArroba == true) {
+    console.log("Su mail es incorrecto");
+    alert("Su mail es incorrecto");
   }
-  if (email !== "@") {
-    console.log("Error al ingresar E-mail");
-    alert("Error al ingresar E-mail");
-    break;
-  } else if (email !== "@") {
-    console.log("mail inexistente");
-    alert("mail inexistente");
-    break;
-  }
+} else {
+  alert("Mail no valido");
+  console.log("Mail no valido");
 }
